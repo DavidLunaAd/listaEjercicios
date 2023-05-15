@@ -1,0 +1,15 @@
+<body>
+  <h2 class="title">Ejercicios component</h2>
+  <ul class="ejercicios">
+    <li *ngFor="let ejercicio of ejercicios"(click)="onSelectedEjercicio(ejercicio)" [class.selected]="ejercicio===ejercicioSeleccionado">
+      <span class="ejercicio">{{ejercicio.id}}</span> {{ejercicio.name}}
+    </li>
+  </ul>
+  <div class="modificador">
+    <label>Modify: </label>
+    <input [(ngModel)]="ejercicioSeleccionado.name" placeholder="Nombre">
+  </div>
+  <div class="detalle">
+    <app-detalle [ejercicio]="ejercicioSeleccionado"></app-detalle>
+  </div>
+</body>
